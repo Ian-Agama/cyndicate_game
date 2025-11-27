@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cyndicate Board Game</title>
+    <style>
+      body {
+        background: #121212;
+        color: white;
+        text-align: center;
+      }
+      canvas {
+        background: #222;
+        border: 2px solid #555;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CYNDICATE</h1>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script type="module">
+      import { drawBoard } from "./render/canvas.js";
+      import "./render/ui.js";
+      drawBoard();
+    </script>
+  </body>
+</html>
+
