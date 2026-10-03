@@ -17,7 +17,7 @@ export function computerMove(computer, gameState) {
   const bestMove = chooseBestMove(possibleMoves, gameState, computer);
 
   movePlayer(computer, computer.position, bestMove, gameState);
-  drawBoard();
+  //drawBoard();
 
   if (checkWin(computer, gameState)) {
     alert(`${computer.name} has won!`);

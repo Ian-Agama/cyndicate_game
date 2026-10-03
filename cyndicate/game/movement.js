@@ -1,11 +1,12 @@
-import { edges } from "../graph/edges.js";
+/*import { edges } from "../graph/edges.js";
 import { nodes } from "../graph/nodes.js";
 
 /**
  * Attempts to move a player along an edge from one node to another.
  * Checks edge conditions dynamically instead of using hard-coded paths.
  */
-export function movePlayer(player, fromNodeId, toNodeId, gameState) {
+
+/*export function movePlayer(player, fromNodeId, toNodeId, gameState) {
   const edge = edges.find(
     e =>
       (e.start === fromNodeId && e.end === toNodeId) ||
@@ -21,7 +22,7 @@ export function movePlayer(player, fromNodeId, toNodeId, gameState) {
   if (!isPathClear(edge, gameState)) return false;
   //if (!ruleAllows(edge, gameState)) return false;
   if (!objectFree(edge, gameState)) return false;
-  if (!eventFree(edge, gameState)) return false;
+ 
 
   // ✅ Movement is valid — update player position
   player.position = toNodeId;
@@ -32,9 +33,9 @@ export function movePlayer(player, fromNodeId, toNodeId, gameState) {
 /* -------------------------------------------------------------
    1️⃣ Path / Position Check
 ------------------------------------------------------------- */
-function isPathClear(edge, gameState) {
+/*function isPathClear(edge, gameState) {
   const obstacle = gameState.players.find(
-    o => o.location === edge.id && o.isComputer
+    o => o.location && o.isComputer === edge.id
   );
   if (obstacle) {
     console.log("Movement blocked: obstacle on edge.");
@@ -48,7 +49,7 @@ function isPathClear(edge, gameState) {
 /* -------------------------------------------------------------
    3️⃣ Object-Based Check
 ------------------------------------------------------------- */
-function objectFree(edge, gameState) {
+/*function objectFree(edge, gameState) {
   const occupied = gameState.players.find(
     p => p.position === edge.end && p.faction !== gameState.activeFaction
   );
@@ -59,23 +60,10 @@ function objectFree(edge, gameState) {
   return true;
 }
 
-/* -------------------------------------------------------------
-   4️⃣ Event-Based Check
-------------------------------------------------------------- */
-function eventFree(edge, gameState) {
-  const activeEvent = gameState.events.find(
-    ev => ev.affectedEdges.includes(edge.id) && ev.active
-  );
-  if (activeEvent) {
-    console.log("Movement blocked: edge disabled by world event.");
-    return false;
-  }
-  return true;
-}
 
+*/
 
-
-/*import { edges } from "../graph/edges.js";
+import { edges } from "../graph/edges.js";
 import { nodes } from "../graph/nodes.js";
 import { gameState } from "./state.js"
 
@@ -105,7 +93,7 @@ export function movePlayer(player, fromNode , toNode , gameState){
 
 }
 
-/*
+
 export function compValid(){
   const comps = gameState.players.find( comp => comp.position === comp.isComputer);
 
@@ -129,4 +117,4 @@ function isvalidMove( fromNode, toNode, gameState){
   const isConnected = neighbours.includes(toNode);
    
   return isConnected && free; 
-}*/
+}

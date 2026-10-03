@@ -1,5 +1,4 @@
-//import{gameState} from "./state.js"
-import {nodes} from "../graph/nodes.js";
+//import{gameState} from "./state.js" import {nodes} from "../graph/nodes.js"; game win logic 
 //const pl1 = gameState.find(m => m.id == 1);
 //const pl2 = gameState.find(m => m.id == 2);
 //const pl3 = gameState.find(m => m.id == 3);

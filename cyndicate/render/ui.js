@@ -48,13 +48,12 @@ canvas.addEventListener("click", event => {
       console.log(`${selecectedPlayer.name} moved to node ${clickedNode.id}`);
       drawBoard();
 
-      if(checkWin(selecectedPlayer, gameState)){
-        console.log(`${selecectedPlayer.name} has won`)
-        return;;
+     // if(checkWin(selecectedPlayer, gameState)){
+       // console.log(`${selecectedPlayer.name} has won`)
+        ///return;;
       
-      }
-      selecectedPlayer = null;
-        //drawBoard();
+      //}
+      
         
         //switchTurn();
       
